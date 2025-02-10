@@ -10,14 +10,13 @@ const LandingPage = () => {
         <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
           <span className="block">Hello, I'm</span>
           <span className="block text-blue-600">Kristine</span>
-          <p className='text-5xl sm:text-6xl font-bold text-gray-600 mb-6'>
-            Interaction design student at Aalborg University
+          <p className='text-xl text-gray-600 mb-8 max-w-2xl'>
+            Interaction design student, volunteer and football coach
           </p>
         </h1>
         
         <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-          A passionate developer crafting beautiful and functional web experiences. 
-          I specialize in frontend development with a focus on React and modern web technologies.
+          Based in Aalborg, Denmark. I study interaction design with both physical and interactive products.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-12">
