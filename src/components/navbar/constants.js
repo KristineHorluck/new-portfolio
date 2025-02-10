@@ -12,7 +12,7 @@ export const NAV_ITEMS = [
     {
         label: 'Projects',
         path: '/projects',
-        icon: 'briefcase'  // Fixed spelling
+        icon: 'briefcase'
     },
     {
         label: 'Contact',

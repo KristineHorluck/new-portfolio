@@ -106,7 +106,7 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
+      title: "Redsign of Payment machine for washing machines",
       description: "A full-stack e-commerce solution with real-time inventory management",
       image: "/api/placeholder/800/600",
       gallery: [
