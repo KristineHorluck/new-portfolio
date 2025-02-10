@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
-import LandingPage from './components/landingPage';
+import { default as LandingPage } from './components/landingPage.jsx';  // Added .jsx extension
+import ProjectsPage from './components/projectPage';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path="/about" element={<div className="text-gray-900">About Page</div>} />
-            <Route path="/projects" element={<div className="text-gray-900">Projects Page</div>} />
+            <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<div className="text-gray-900">Contact Page</div>} />
           </Routes>
         </div>
