@@ -8,12 +8,15 @@ const LandingPage = () => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
     const handleMouseMove = (e) => {
       if (!isFlipped) {
         setMousePosition({
-          x: (e.clientX / window.innerWidth) * 20 - 10,
-          y: (e.clientY / window.innerHeight) * 20 - 10,
+          x: (e.clientX / window.innerWidth) * 30 - 15,
+          y: (e.clientY / window.innerHeight) * 30 - 15,
         });
       }
     };
@@ -33,17 +36,17 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Interactive Hero Section with Flip Effect */}
+      {/* Interactive Hero Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div 
-          className="relative cursor-pointer"
+          className="relative cursor-pointer transition-transform duration-300"
           onClick={() => setIsFlipped(!isFlipped)}
           style={{
             transformStyle: 'preserve-3d',
-            perspective: '1000px',
+            perspective: '2000px',
             transform: isFlipped ? 'rotateY(180deg)' : 
-              `rotateX(${mousePosition.y * 0.1}deg) rotateY(${mousePosition.x * 0.1}deg)`,
-            transition: 'transform 0.6s ease-out',
+              `perspective(2000px) rotateX(${mousePosition.y * 0.15}deg) rotateY(${mousePosition.x * 0.15}deg) scale(${isLoaded ? 1 : 0.9})`,
+            transition: 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
           }}
         >
           {/* Front Side */}
@@ -52,11 +55,18 @@ const LandingPage = () => {
             style={{
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
-              transition: 'opacity 0.6s',
+              transition: 'all 0.6s cubic-bezier(0.23, 1, 0.32, 1)',
               opacity: isFlipped ? 0 : 1,
+              transform: `translateY(${isLoaded ? '0' : '30px'})`,
             }}
           >
-            <div className={`transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <div 
+              className="transition-all duration-1000 ease-out"
+              style={{
+                opacity: isLoaded ? 1 : 0,
+                transform: `translateY(${isLoaded ? '0' : '30px'})`,
+              }}
+            >
               <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
                 <span className="block">Hello, I'm</span>
                 <span className="block text-blue-600 hover:text-blue-700 transition-colors cursor-pointer
@@ -75,7 +85,7 @@ const LandingPage = () => {
               </p>
 
               <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-                Based in Aalborg, Denmark. I study interaction design with both physical and interactive products.
+                Based in Aalborg, Denmark. I study interaction design at Aalborg University, with both physical and interactive products.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">
@@ -147,14 +157,13 @@ const LandingPage = () => {
                 alt="Kristine Hørlück"
                 className="w-full h-full object-cover"
               />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
-               <div className="absolute bottom-0 left-0 p-8 text-white w-full">
-                <div className="flex flex-col items-start">
-                  {/*<h2 className="text-3xl font-bold mb-2 transform scale-x-[-1]">Kristine Hørlück</h2>*/}
-                  <p className="text-lg opacity-90 transform scale-x-[-1]">Click to flip back</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+                <div className="absolute bottom-0 left-0 p-8 text-white w-full">
+                  <div className="flex flex-col items-start">
+                    <p className="text-lg opacity-90 transform scale-x-[-1]">Click to flip back</p>
+                  </div>
                 </div>
-               </div>
-             </div>
+              </div>
             </div>
           </div>
         </div>
