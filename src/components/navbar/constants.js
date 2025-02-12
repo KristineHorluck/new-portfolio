@@ -1,3 +1,4 @@
+// constants.js
 export const NAV_ITEMS = [
     {
         label: 'Kristine Hørlück',
@@ -7,16 +8,16 @@ export const NAV_ITEMS = [
     {
         label: 'About',
         path: '/about',
-        icon: 'home'
+        icon: 'home'  // matches the iconMap in navbar.jsx
     },
     {
         label: 'Projects',
         path: '/projects',
-        icon: 'briefcase'
+        icon: 'briefcase'  // matches the iconMap in navbar.jsx
     },
     {
         label: 'Contact',
         path: '/contact',
-        icon: 'mail'
+        icon: 'mail'  // matches the iconMap in navbar.jsx
     }
 ];

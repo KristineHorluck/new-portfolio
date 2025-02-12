@@ -15,16 +15,18 @@ function App() {
           <div className="design-element"></div>
         </div>
       </div>
-      <header className="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-md">
-        <Navbar />
-      </header>
+      
+      {/* Navbar */}
+      <Navbar />
+      
+      {/* Main content with top padding to account for fixed navbar */}
       <main className="pt-16 relative">
         <div className="container mx-auto px-4">
           <Routes>
             <Route path='/' element={<LandingPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/about" element={<div className="text-gray-900">About Page</div>} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/contact" element={<div className="text-gray-900">Contact Page</div>} />
+            <Route path="/contact" element={<div className="pt-20 text-gray-900">Contact Page</div>} />
           </Routes>
         </div>
       </main>
