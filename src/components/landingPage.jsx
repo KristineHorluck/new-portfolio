@@ -237,7 +237,7 @@ const LandingPage = () => {
                     {project.tech.map((tech, i) => (
                       <span 
                         key={i}
-                        className="px-2 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
+                        className="px-2 py-1 bg-[#284B63]-50 text-blue-600 text-sm rounded-full"
                       >
                         {tech}
                       </span>
