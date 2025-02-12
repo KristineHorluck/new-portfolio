@@ -11,33 +11,33 @@ const AboutPage = () => {
   const timelineEvents = [
     {
       year: '2020',
-      title: 'Started doing Object Oriented Programming, in unity and C#',
-      description: 'Discovered my want to create things, but I learned it primarily through the theme gamemaking',
-      icon: <Rocket className="text-blue-500" />
+      title: 'Started My Journey',
+      description: 'Discovered my passion for creating amazing things!',
+      icon: <Rocket className="text-teal-500" />
     },
     {
-      year: '2023',
+      year: '2021',
       title: 'First Big Project',
-      description: 'Had to make a Tower Defense game for my program exam',
-      icon: <Star className="text-yellow-500" />
+      description: 'Built something awesome that made people smile',
+      icon: <Star className="text-amber-500" />
+    },
+    {
+      year: '2022',
+      title: 'Level Up',
+      description: 'Learned new skills and met incredible people',
+      icon: <Sparkles className="text-teal-500" />
     },
     {
       year: '2023',
-      title: 'Started in Univeristy, on Interaction Design (IxD)',
-      description: 'Learned new skills, more related to what i wanted to make with code and design, while i also met incredible people.',
-      icon: <Sparkles className="text-blue-500" />
-    },
-    {
-      year: '2023',
-      title: 'Angular',
+      title: 'New Adventures',
       description: 'Embarked on exciting new challenges',
-      icon: <Heart className="text-red-500" />
+      icon: <Heart className="text-amber-500" />
     },
     {
       year: '2024',
       title: 'Current Chapter',
       description: 'Writing the next exciting part of my story!',
-      icon: <Coffee className="text-amber-500" />
+      icon: <Coffee className="text-teal-600" />
     }
   ];
 
@@ -58,16 +58,16 @@ const AboutPage = () => {
       {/* Animated Intro Section */}
       <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Hello, I'm Kristine !
+          <h1 className="text-5xl font-bold mb-4 text-teal-600">
+            Hello, I'm Kristine! ✨
           </h1>
           <p className="text-xl text-gray-700 mb-4">
             Creative Soul • Frontend Developer • Design Enthusiast
           </p>
           <div className="flex justify-center gap-4">
-            <Music className="text-blue-500 animate-bounce" />
-            <Camera className="text-purple-500 animate-bounce delay-100" />
-            <Palette className="text-blue-500 animate-bounce delay-200" />
+            <Music className="text-teal-500 animate-bounce" />
+            <Camera className="text-amber-500 animate-bounce delay-100" />
+            <Palette className="text-teal-600 animate-bounce delay-200" />
           </div>
         </div>
 
@@ -80,9 +80,9 @@ const AboutPage = () => {
           ].map((fact, index) => (
             <div 
               key={index}
-              className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-teal-100"
             >
-              <div className="flex items-center gap-3 mb-3 text-blue-600">
+              <div className="flex items-center gap-3 mb-3 text-teal-600">
                 {fact.icon}
                 <h3 className="font-semibold text-lg">{fact.title}</h3>
               </div>
@@ -93,21 +93,21 @@ const AboutPage = () => {
 
         {/* Horizontal Timeline */}
         <div className="relative mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            My Journey
+          <h2 className="text-3xl font-bold text-center mb-8 text-teal-600">
+            My programming Journey
           </h2>
           
           {/* Timeline Navigation */}
           <div className="flex justify-between mb-4">
             <button 
               onClick={() => handleScroll('left')}
-              className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors"
+              className="bg-amber-500 text-white p-2 rounded-full hover:bg-amber-600 transition-colors"
             >
               ←
             </button>
             <button 
               onClick={() => handleScroll('right')}
-              className="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition-colors"
+              className="bg-amber-500 text-white p-2 rounded-full hover:bg-amber-600 transition-colors"
             >
               →
             </button>
@@ -122,13 +122,13 @@ const AboutPage = () => {
             {timelineEvents.map((event, index) => (
               <div 
                 key={index}
-                className="flex-none w-64 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                className="flex-none w-64 bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-teal-100"
               >
                 <div className="flex items-center gap-3 mb-3">
                   {event.icon}
-                  <span className="font-bold text-lg">{event.year}</span>
+                  <span className="font-bold text-lg text-amber-600">{event.year}</span>
                 </div>
-                <h3 className="font-semibold mb-2">{event.title}</h3>
+                <h3 className="font-semibold mb-2 text-teal-700">{event.title}</h3>
                 <p className="text-gray-600 text-sm">{event.description}</p>
               </div>
             ))}
@@ -137,13 +137,13 @@ const AboutPage = () => {
 
         {/* Contact Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold mb-6 text-teal-600">
             Let's Create Something Amazing!
           </h2>
           <p className="text-lg text-gray-700 mb-8">
             Drop me a message and let's start a conversation about your next exciting project.
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <button className="bg-gradient-to-r from-teal-500 to-amber-500 text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
             Say Hello! 👋
           </button>
         </div>
