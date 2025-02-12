@@ -59,7 +59,7 @@ const AboutPage = () => {
       <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-4 text-teal-600">
-            Hello, I'm Kristine! ✨
+            Hello, I'm Kristine Hørlück
           </h1>
           <p className="text-xl text-gray-700 mb-4">
             Creative Soul • Frontend Developer • Design Enthusiast
@@ -143,7 +143,7 @@ const AboutPage = () => {
           <p className="text-lg text-gray-700 mb-8">
             Drop me a message and let's start a conversation about your next exciting project.
           </p>
-          <button className="bg-gradient-to-r from-teal-500 to-amber-500 text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <button className="bg-teal-500 text-white px-8 py-3 rounded-full hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
             Say Hello! 👋
           </button>
         </div>
