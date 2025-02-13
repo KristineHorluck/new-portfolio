@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp, ExternalLink, Github } from 'lucide-react';
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-[#3c6e71]/10">
       <div className="cursor-pointer">
         {/* Image Section */}
         <div className="relative h-64 w-full overflow-hidden">
@@ -12,7 +12,7 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#284b63]/80 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <h3 className="text-2xl font-medium text-white mb-2">{project.title}</h3>
             <p className="text-white/90">{project.description}</p>
@@ -26,15 +26,15 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
               {project.tech.map((tech, i) => (
                 <span 
                   key={i}
-                  className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
+                  className="px-3 py-1 bg-[#3c6e71]/10 text-[#3c6e71] text-sm rounded-full"
                 >
                   {tech}
                 </span>
               ))}
             </div>
             {isExpanded ? 
-              <ChevronUp className="w-6 h-6 text-gray-400" /> : 
-              <ChevronDown className="w-6 h-6 text-gray-400" />
+              <ChevronUp className="w-6 h-6 text-[#284b63]" /> : 
+              <ChevronDown className="w-6 h-6 text-[#284b63]" />
             }
           </div>
 
@@ -55,12 +55,12 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
                 </div>
               )}
 
-              <div className="text-gray-700">{project.longDescription}</div>
+              <div className="text-[#284b63]">{project.longDescription}</div>
               
               {project.features && (
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-2">Key Features</h4>
-                  <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  <h4 className="font-medium text-[#3c6e71] mb-2">Key Features</h4>
+                  <ul className="list-disc list-inside space-y-1 text-[#284b63]">
                     {project.features.map((feature, index) => (
                       <li key={index}>{feature}</li>
                     ))}
@@ -74,7 +74,8 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700"
+                    className="inline-flex items-center text-[#3c6e71] hover:text-[#284b63] transition-colors"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
@@ -85,7 +86,8 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-600 hover:text-gray-800"
+                    className="inline-flex items-center text-[#284b63] hover:text-[#3c6e71] transition-colors"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <Github className="w-4 h-4 mr-2" />
                     View Code
@@ -106,8 +108,8 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      title: "Redsign of Payment machine for washing machines",
-      description: "A full-stack e-commerce solution with real-time inventory management",
+      title: "Payment Machine Redesign",
+      description: "A comprehensive redesign of the payment interface for washing machines",
       image: "/api/placeholder/800/600",
       gallery: [
         "/api/placeholder/400/300",
@@ -115,16 +117,16 @@ const ProjectsPage = () => {
         "/api/placeholder/400/300",
         "/api/placeholder/400/300"
       ],
-      longDescription: "Built a scalable e-commerce platform featuring user authentication, product management, shopping cart functionality, and order processing. Implemented real-time inventory tracking and automated email notifications.",
-      tech: ["React", "Node.js", "MySQL", "Redis"],
+      longDescription: "Redesigned the payment interface for washing machines to improve user experience and accessibility. The project focused on creating an intuitive, user-friendly interface that accommodates users of all ages and technical backgrounds.",
+      tech: ["UI/UX", "Prototyping", "User Research", "Interaction Design"],
       features: [
-        "User authentication and authorization",
-        "Real-time inventory management",
-        "Secure payment processing",
-        "Order tracking system"
+        "Intuitive payment flow",
+        "Accessibility features",
+        "Multi-language support",
+        "Digital receipt system"
       ],
-      github: "https://github.com/username/e-commerce",
-      liveDemo: "https://demo-ecommerce.com"
+      github: "https://github.com/KristineHorluck/payment-machine",
+      liveDemo: "https://demo-payment.com"
     },
     {
       id: 2,
@@ -145,7 +147,7 @@ const ProjectsPage = () => {
         "Real-time data updates",
         "Export to PDF/CSV"
       ],
-      github: "https://github.com/username/dashboard",
+      github: "https://github.com/KristineHorluck/dashboard",
       liveDemo: "https://demo-dashboard.com"
     },
     {
@@ -167,15 +169,15 @@ const ProjectsPage = () => {
         "Energy usage analytics",
         "Mobile-responsive design"
       ],
-      github: "https://github.com/username/smart-home",
+      github: "https://github.com/KristineHorluck/smart-home",
       liveDemo: "https://demo-smarthome.com"
     }
   ];
 
   return (
-    <div className="py-12">
+    <div className="min-h-screen bg-white py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">My Projects</h1>
+        <h1 className="text-4xl font-bold text-[#284b63] mb-8">My Projects</h1>
         <div className="space-y-8">
           {projects.map((project) => (
             <ProjectCard

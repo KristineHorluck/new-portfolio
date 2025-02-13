@@ -29,14 +29,14 @@ const Navbar = () => {
                                 {logoItem.label.split('').map((char, index) => (
                                     <span
                                         key={index}
-                                        className="inline-block transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
+                                        className="inline-block transition-all duration-300 hover:text-#284b63-600 hover:-translate-y-1"
                                         style={{ transitionDelay: `${index * 50}ms` }}
                                     >
                                         {char}
                                     </span>
                                 ))}
                             </span>
-                            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 
+                            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#3c6e71] to-[#284b63] 
                                          transform origin-left scale-x-0 transition-transform duration-300 
                                          group-hover:scale-x-100"></span>
                         </a>

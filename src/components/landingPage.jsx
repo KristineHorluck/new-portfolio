@@ -35,7 +35,7 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center overflow-hidden bg-white">
+    <div className="min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Interactive Hero Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div 
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 transform: `translateY(${isLoaded ? '0' : '30px'})`,
               }}
             >
-              <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-5xl sm:text-6xl font-bold text-[#284b63] mb-6">
                 <span className="block">Hello, I'm</span>
                 <span className="block text-[#3c6e71] hover:text-[#3c6e71]/90 transition-colors cursor-pointer
                                relative inline-block group">
@@ -77,22 +77,23 @@ const LandingPage = () => {
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-4 relative">
+              <p className="text-xl text-[#284b63] mb-4 relative">
                 <span className="absolute -left-8 top-1 animate-bounce">
                   <MousePointer2 className="w-5 h-5 text-[#3c6e71]" />
                 </span>
                 Interaction design student, volunteer and football coach
               </p>
 
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-                Based in Aalborg, Denmark. I study interaction design at Aalborg University, with both physical and interactive products.
+              <p className="text-xl text-[#284b63] mb-8 max-w-2xl">
+                Based in Aalborg, Denmark. I study interaction design at Aalborg University, 
+                with both physical and interactive products.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">
                 <a 
                   href="/projects" 
                   className="group inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-[#3c6e71] 
-                             rounded-lg hover:bg-[#3c6e71]/90 transition-all duration-300 transform hover:-translate-y-1"
+                             rounded-lg hover:bg-[#284b63] transition-all duration-300 transform hover:-translate-y-1"
                   onClick={(e) => e.stopPropagation()}
                 >
                   View my projects
@@ -129,7 +130,7 @@ const LandingPage = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#3c6e71] hover:text-[#3c6e71]/80 transition-all duration-300 transform hover:-translate-y-1"
+                    className="text-[#284b63] hover:text-[#3c6e71] transition-all duration-300 transform hover:-translate-y-1"
                     aria-label={social.label}
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -140,7 +141,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Back Side (Your Photo) */}
+          {/* Back Side (Photo) */}
           <div 
             className="absolute inset-0 w-full rounded-lg overflow-hidden"
             style={{
@@ -153,11 +154,11 @@ const LandingPage = () => {
           >
             <div className="relative w-full h-full" style={{ transform: 'rotateY(180deg)' }}>
               <img 
-                src="public/Billede.jpg"
+                src="Billede.jpg"
                 alt="Kristine Hørlück"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#284b63]/60 to-transparent">
                 <div className="absolute bottom-0 left-0 p-8 text-white w-full">
                   <div className="flex flex-col items-start">
                     <p className="text-lg opacity-90 transform scale-x-[-1]">Click to flip back</p>
@@ -170,24 +171,26 @@ const LandingPage = () => {
       </div>
 
       {/* Skills Section */}
-      <div className="bg-[#3c6e71]/5 py-16">
+      <div className="bg-[#284b63]/5 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Featured Skills</h2>
+          <h2 className="text-2xl font-semibold text-[#284b63] mb-8">Featured Skills</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <div 
                 key={skill.name}
                 className={`p-6 bg-white rounded-lg shadow-sm transition-all duration-300 transform 
-                           cursor-pointer ${activeSkill === index ? 'scale-105 shadow-lg' : 'hover:scale-102 hover:shadow-md'}`}
+                           cursor-pointer border border-[#3c6e71]/20 ${
+                             activeSkill === index ? 'scale-105 shadow-lg' : 'hover:scale-102 hover:shadow-md'
+                           }`}
                 onMouseEnter={() => setActiveSkill(index)}
                 onMouseLeave={() => setActiveSkill(null)}
               >
                 <div className="flex items-center space-x-3">
                   <span className="text-2xl">{skill.icon}</span>
                   <div>
-                    <h3 className="font-medium text-gray-900">{skill.name}</h3>
-                    <p className="text-gray-600 text-sm">{skill.description}</p>
+                    <h3 className="font-medium text-[#284b63]">{skill.name}</h3>
+                    <p className="text-[#284b63]/80 text-sm">{skill.description}</p>
                   </div>
                 </div>
               </div>
@@ -197,9 +200,9 @@ const LandingPage = () => {
       </div>
 
       {/* Projects Preview Section */}
-      <div id="projects" className="py-16 scroll-mt-16">
+      <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Featured Projects</h2>
+          <h2 className="text-2xl font-semibold text-[#284b63] mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
@@ -218,7 +221,7 @@ const LandingPage = () => {
               <div 
                 key={index}
                 className="group relative bg-white rounded-lg shadow-sm overflow-hidden 
-                           transition-all duration-300 hover:shadow-xl"
+                           border border-[#3c6e71]/20 transition-all duration-300 hover:shadow-xl"
               >
                 <div className="relative h-48">
                   <img 
@@ -227,12 +230,12 @@ const LandingPage = () => {
                     className="w-full h-full object-cover transition-transform duration-300 
                              group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent 
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#284b63]/60 to-transparent 
                                 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-medium text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <h3 className="text-xl font-medium text-[#284b63] mb-2">{project.title}</h3>
+                  <p className="text-[#284b63]/80 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
                       <span 
