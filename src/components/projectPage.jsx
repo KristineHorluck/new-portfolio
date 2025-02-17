@@ -131,6 +131,27 @@ const ProjectsPage = () => {
     },
     {
       id: 2,
+      title: "Physical product design",
+      description: "Design and development of a smart home waste sorting product for student apartments",
+      image: "/src/assets/SmartHomeWaste/ResultMiniProtoTest.png",
+      gallery: [
+        "/src/assets/SmartHomeWaste/miniProto.png",
+        "/src/assets/SmartHomeWaste/miniProtoTest.png",
+        "/src/assets/SmartHomeWaste/physicalProto.png",
+        "/src/assets/SmartHomeWaste/insidePhysicalProto.png"
+      ],
+      longDescription: "Designed and developed a smart home product that helps apartment-living students sort waste properly.",
+      tech: ["User Research", "Prototyping", "Physical Product Design", "Interaction Design", "Co-creation", "User centered design"],
+      features: [
+        "Motivation to waste sorting",
+        "Feedback on waste sorting",
+        "Easy to use",
+        "Interactive design",
+        "Designed to be placed all around the house"
+      ],
+    },
+    {
+      id: 3,
       title: "Redesign of Travellink Holiday Rentals",
       description: "Made by analysing the potential redesign of holiday rentals on Travellink.dk",
       image: "/src/assets/Travellink/Redesign2.png",
@@ -150,7 +171,7 @@ const ProjectsPage = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: "Laundry Payment Machine Redesign",
       description: "First unversity project, consisting redesign of the payment interface for payment machine",
       image: "/src/assets/Laundry/ATMOversigt.png",

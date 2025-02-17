@@ -106,11 +106,6 @@ const ContactPage = () => {
               icon: <MapPin className="w-6 h-6" />,
               title: 'Location',
               content: 'Aalborg, Denmark'
-            },
-            {
-              icon: <Clock className="w-6 h-6" />,
-              title: 'Response Time',
-              content: 'Within 24-48 hours'
             }
           ].map((item, index) => (
             <div

@@ -16,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed w-full top-0 z-50 h-16"> {/* Fixed height added */}
+        <nav className="fixed w-full top-0 z-50 h-16">
             {/* Glowing background effect with reduced opacity */}
             <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
             
@@ -24,12 +24,12 @@ const Navbar = () => {
                 <div className="flex h-full justify-between items-center">
                     {/* Logo section */}
                     <div className="flex items-center">
-                        <a href="/" className="group relative text-xl md:text-2xl font-medium">
+                        <a href="/" className="group relative text-xl md:text-2xl font-medium text-[#284b63]">
                             <span className="relative inline-block">
                                 {logoItem.label.split('').map((char, index) => (
                                     <span
                                         key={index}
-                                        className="inline-block transition-all duration-300 hover:text-#284b63-600 hover:-translate-y-1"
+                                        className="inline-block transition-all duration-300 hover:text-[#3c6e71] hover:-translate-y-1"
                                         style={{ transitionDelay: `${index * 50}ms` }}
                                     >
                                         {char}
@@ -50,7 +50,7 @@ const Navbar = () => {
                                 <a
                                     key={item.path}
                                     href={item.path}
-                                    className="group relative px-3 py-2 text-sm font-medium transition-all duration-300"
+                                    className="group relative px-3 py-2 text-sm font-medium transition-all duration-300 text-[#284b63]"
                                     onMouseEnter={() => setHoveredItem(item.path)}
                                     onMouseLeave={() => setHoveredItem(null)}
                                 >
@@ -58,19 +58,19 @@ const Navbar = () => {
                                         {Icon && (
                                             <Icon 
                                                 className={`w-5 h-5 transition-transform duration-300
-                                                          ${hoveredItem === item.path ? 'scale-110' : 'scale-100'}`}
+                                                          ${hoveredItem === item.path ? 'scale-110 text-[#3c6e71]' : 'scale-100'}`}
                                             />
                                         )}
                                         <span>{item.label}</span>
                                     </div>
                                     
                                     {/* Animated background */}
-                                    <span className={`absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 
+                                    <span className={`absolute inset-0 bg-gradient-to-r from-[#3c6e71]/5 to-[#284b63]/5 
                                                     rounded-lg -z-10 transition-all duration-300 
                                                     ${hoveredItem === item.path ? 'opacity-100' : 'opacity-0'}`}></span>
                                     
                                     {/* Bottom border */}
-                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 
+                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#3c6e71] to-[#284b63] 
                                                    transform origin-left scale-x-0 transition-transform duration-300 
                                                    group-hover:scale-x-100"></span>
                                 </a>
@@ -83,7 +83,7 @@ const Navbar = () => {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="relative inline-flex items-center justify-center p-2 rounded-lg
-                                     text-blue-700 hover:bg-blue-100 hover:text-gray-900 
+                                     text-[#3c6e71] hover:bg-[#3c6e71]/10 hover:text-[#284b63] 
                                      transition-all duration-300 transform hover:scale-105"
                             aria-expanded={isOpen}
                         >
@@ -116,7 +116,7 @@ const Navbar = () => {
                                 key={item.path}
                                 href={item.path}
                                 className="flex items-center px-3 py-2 text-base font-medium rounded-lg
-                                         text-gray-700 hover:text-blue-600 hover:bg-blue-50
+                                         text-[#284b63] hover:text-[#3c6e71] hover:bg-[#3c6e71]/10
                                          transition-all duration-300 transform hover:translate-x-2"
                             >
                                 {Icon && <Icon className="w-5 h-5 mr-2" />}
