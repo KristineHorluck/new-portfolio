@@ -35,7 +35,6 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate form
     const validationError = validateForm();
     if (validationError) {
       setError(validationError);
@@ -46,16 +45,18 @@ const ContactPage = () => {
     setError('');
 
     try {
-      // You would replace this URL with your actual API endpoint
-      const response = await fetch('http://localhost:4174/api/contact', {
+      const response = await fetch('http://kristinehorluck.com/contact.php', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
-    });
+        body: JSON.stringify(formData),
+        credentials: 'include'
+      });
+
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
       }
 
       setSubmitted(true);
@@ -66,12 +67,12 @@ const ContactPage = () => {
         message: ''
       });
     } catch (err) {
-      setError('Failed to send message. Please try again later.');
+      setError(err.message || 'Failed to send message. Please try again later.');
       console.error('Form submission error:', err);
     } finally {
       setIsLoading(false);
     }
-  };
+};
 
   return (
     <div className="min-h-screen py-12">
