@@ -1,9 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
-import { default as LandingPage } from './components/landingPage.jsx';  // Added .jsx extension
+import LandingPage from './components/landingPage';
 import ProjectsPage from './components/projectPage';
 import AboutPage from './components/aboutPage';
+import ContactPage from './components/contactPage';
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
       <main className="pt-16 relative">
         <div className="container mx-auto px-4">
           <Routes>
-            <Route path='/' element={<LandingPage />} />
-            <Route path="/about" element={<AboutPage/>} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/contact" element={<div className="pt-20 text-gray-900">Contact Page</div>} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
       </main>
