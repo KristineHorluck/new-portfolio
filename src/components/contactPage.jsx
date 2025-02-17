@@ -72,11 +72,11 @@ const ContactPage = () => {
     } finally {
       setIsLoading(false);
     }
-};
+  };
 
   return (
     <div className="min-h-screen py-12">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-[#3c6e71] mb-4">
@@ -88,52 +88,51 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-  {[
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      content: 'kristine.horluck@outlook.com',
-      link: 'mailto:kristine.horluck@outlook.com'
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'Phone Number',
-      content: '+45 22 92 23 35'
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Location',
-      content: 'Aalborg, Denmark'
-    }
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-[#3c6e71]/20 min-h-[160px] w-full"
-    >
-      <div className="flex gap-3">
-        <div className="text-[#3c6e71] shrink-0 pt-1">{item.icon}</div>
-        <div className="min-w-0 flex-1 -m-1"> {/* This ensures proper text wrapping */}
-          <h3 className="font-semibold text-lg text-[#284b63] mb-2">{item.title}</h3>
-          {item.link ? (
-            <a 
-              href={item.link} 
-              className="text-[#284b63] hover:text-[#3c6e71] transition-colors inline-block w-full overflow-hidden text-ellipsis"
+        <div className="grid md:grid-cols-3 gap-8 mb-16 px-4">
+          {[
+            {
+              icon: <Mail className="w-6 h-6" />,
+              title: 'Email',
+              content: 'kristine.horluck@outlook.com',
+              link: 'mailto:kristine.horluck@outlook.com'
+            },
+            {
+              icon: <Phone className="w-6 h-6" />,
+              title: 'Phone Number',
+              content: '+45 22 92 23 35'
+            },
+            {
+              icon: <MapPin className="w-6 h-6" />,
+              title: 'Location',
+              content: 'Aalborg, Denmark'
+            }
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-[#3c6e71]/20 min-h-[160px] w-full md:min-w-[300px]"
             >
-              {item.content}
-            </a>
-          ) : (
-            <p className="text-[#284b63] overflow-hidden text-ellipsis">
-              {item.content}
-            </p>
-          )}
+              <div className="flex gap-3">
+                <div className="text-[#3c6e71] shrink-0 pt-1">{item.icon}</div>
+                <div className="min-w-0 flex-1 -m-1">
+                  <h3 className="font-semibold text-lg text-[#284b63] mb-2">{item.title}</h3>
+                  {item.link ? (
+                    <a 
+                      href={item.link} 
+                      className="text-[#284b63] hover:text-[#3c6e71] transition-colors inline-block w-full overflow-hidden text-ellipsis"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <p className="text-[#284b63] overflow-hidden text-ellipsis">
+                      {item.content}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
-
-        {/* Contact Form Section */}
+      {/*
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-xl shadow-sm p-8 border border-[#3c6e71]/20">
             {submitted ? (
@@ -248,6 +247,7 @@ const ContactPage = () => {
             )}
           </div>
         </div>
+        */}
       </div>
     </div>
   );
