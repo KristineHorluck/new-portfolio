@@ -47,14 +47,13 @@ const ContactPage = () => {
 
     try {
       // You would replace this URL with your actual API endpoint
-      const response = await fetch('/api/contact', {
+      const response = await fetch('http://localhost:4174/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
-      });
-
+    });
       if (!response.ok) {
         throw new Error('Failed to send message');
       }

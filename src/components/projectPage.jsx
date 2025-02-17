@@ -1,32 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink, Github } from 'lucide-react';
-// Greetly Images
-import greetlyHomepage from '../assets/Greetly/Homepage.png';
-import greetlyEmpathyMap from '../assets/Greetly/EmpathyMap.png';
-import greetlyWireFraming from '../assets/Greetly/WireFraming.png';
-import greetlyDesignOption1 from '../assets/Greetly/DesignOption1.png';
-import greetlyLogin from '../assets/Greetly/Login.png';
-
-// Smart Home Waste Images
-import smartHomeMain from '../assets/SmartHomeWaste/ResultMiniProtoTest.png';
-import smartHomeMiniProto from '../assets/SmartHomeWaste/miniProto.png';
-import smartHomeMiniProtoTest from '../assets/SmartHomeWaste/miniProtoTest.png';
-import smartHomePhysicalProto from '../assets/SmartHomeWaste/physicalProto.png';
-import smartHomeInsideProto from '../assets/SmartHomeWaste/insidePhysicalProto.png';
-
-// Travellink Images
-import travellinkMain from '../assets/Travellink/Redesign2.png';
-import travellinkUsability from '../assets/Travellink/GrafUsabilityProblemsFounds.png';
-import travellinkFilters from '../assets/Travellink/FIltersOnVacationsTravellinkWebsite.png';
-import travellinkRedesign from '../assets/Travellink/Redesign2.png';
-import travellinkEvaluation from '../assets/Travellink/RedesignEvaluation.png';
-
-// Laundry Images
-import laundryMain from '../assets/Laundry/ATMOversigt.png';
-import laundrySteps from '../assets/Laundry/Steps.png';
-import laundryButtons from '../assets/Laundry/GrupperingAfKnapper.png';
-import laundrySketch from '../assets/Laundry/Sketch1.png';
-
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
   return (
@@ -137,12 +110,12 @@ const ProjectsPage = () => {
       id: 1,
       title: "Web application design",
       description: "Design and development of a social web application for organizing local activities",
-      image: greetlyHomepage,
+      image: "/src/assets/Greetly/Homepage.png",
       gallery: [
-        greetlyEmpathyMap,
-        greetlyWireFraming,
-        greetlyDesignOption1,
-        greetlyLogin
+        "/src/assets/Greetly/EmpathyMap.png",
+        "/src/assets/Greetly/WireFraming.png",
+        "/src/assets/Greetly/DesignOption1.png",
+        "/src/assets/Greetly/Login.png"
       ],
       longDescription: "Developed a comprehensive web application called Greetly, designed to help users organize and participate in local activities. OBS. the database is local, and therefore not available for public use.",
       tech: ["JavaScript", "Figma", "User Research", "Prototyping", "Frontend Development", "Angular"],
@@ -160,12 +133,12 @@ const ProjectsPage = () => {
       id: 2,
       title: "Physical product design",
       description: "Design and development of a smart home waste sorting product for student apartments",
-      image: smartHomeMain,
+      image: "/src/assets/SmartHomeWaste/ResultMiniProtoTest.png",
       gallery: [
-        smartHomeMiniProto,
-        smartHomeMiniProtoTest,
-        smartHomePhysicalProto,
-        smartHomeInsideProto
+        "/src/assets/SmartHomeWaste/miniProto.png",
+        "/src/assets/SmartHomeWaste/miniProtoTest.png",
+        "/src/assets/SmartHomeWaste/physicalProto.png",
+        "/src/assets/SmartHomeWaste/insidePhysicalProto.png"
       ],
       longDescription: "Designed and developed a smart home product that helps apartment-living students sort waste properly.",
       tech: ["User Research", "Prototyping", "Physical Product Design", "Interaction Design", "Co-creation", "User centered design"],
@@ -181,12 +154,12 @@ const ProjectsPage = () => {
       id: 3,
       title: "Redesign of Travellink Holiday Rentals",
       description: "Made by analysing the potential redesign of holiday rentals on Travellink.dk",
-      image: travellinkMain,
+      image: "/src/assets/Travellink/Redesign2.png",
       gallery: [
-        travellinkUsability,
-        travellinkFilters,
-        travellinkRedesign,
-        travellinkEvaluation
+        "/src/assets/Travellink/GrafUsabilityProblemsFounds.png",
+        "/src/assets/Travellink/FIltersOnVacationsTravellinkWebsite.png",
+        "/src/assets/Travellink/Redesign2.png",
+        "/src/assets/Travellink/RedesignEvaluation.png"
       ],
       longDescription: "This project were made by analysing the potential redesign of holiday rentals on Travellink.dk, focusing on the application of Nielsen Norman's 10 Usability Heuristics.",
       tech: ["Usability Testing", "UI/UX", "Heuristic Evaluation", "User Research"],
@@ -201,12 +174,12 @@ const ProjectsPage = () => {
       id: 4,
       title: "Laundry Payment Machine Redesign",
       description: "First unversity project, consisting redesign of the payment interface for payment machine",
-      image: laundryMain,
+      image: "/src/assets/Laundry/ATMOversigt.png",
       gallery: [
-        laundrySteps,
-        laundryButtons,
-        laundrySketch,
-        laundrySteps
+        "/src/assets/Laundry/Steps.png",
+        "/src/assets/Laundry/GrupperingAfKnapper.png",
+        "/src/assets/Laundry/Sketch1.png",
+        "/src/assets/Laundry/Steps.png"
       ],
       longDescription: "Redesigned the payment interface to improve user experience and accessibility. The project focused on creating an intuitive, user-friendly interface that accommodates users of all ages and technical backgrounds.",
       tech: ["UI/UX", "Sketching", "Interaction Design"],
@@ -215,6 +188,7 @@ const ProjectsPage = () => {
         "Accessibility features",
         "Multi-language support",
         "Minimising Cognitive load"
+
       ],
     }
   ];
