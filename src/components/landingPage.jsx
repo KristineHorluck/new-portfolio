@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Github, Linkedin, Mail, MousePointer2 } from 'lucide-react';
-import { projects } from '../data/projectData';
 
 const LandingPage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -205,9 +204,22 @@ const LandingPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-[#284b63] mb-8">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects && projects.slice(0, 2).map((project, index) => (
+            {[
+              {
+                title: 'Project 1',
+                description: 'Description of project 1',
+                tech: ['React', 'TypeScript', 'Tailwind'],
+                image: '/api/placeholder/400/300'
+              },
+              {
+                title: 'Project 2',
+                description: 'Description of project 2',
+                tech: ['Next.js', 'Node.js', 'MySQL'],
+                image: '/api/placeholder/400/300'
+              }
+            ].map((project, index) => (
               <div 
-                key={project.id}
+                key={index}
                 className="group relative bg-white rounded-lg shadow-sm overflow-hidden 
                            border border-[#3c6e71]/20 transition-all duration-300 hover:shadow-xl"
               >
@@ -228,7 +240,7 @@ const LandingPage = () => {
                     {project.tech.map((tech, i) => (
                       <span 
                         key={i}
-                        className="px-2 py-1 bg-[#284b63]/10 text-[#3c6e71] text-sm rounded-full"
+                        className="px-2 py-1 bg-[#284B63]-50 text-blue-600 text-sm rounded-full"
                       >
                         {tech}
                       </span>

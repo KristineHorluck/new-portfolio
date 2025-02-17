@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink, Github } from 'lucide-react';
-import { projects } from '../data/projectData';
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
   return (
@@ -106,12 +105,81 @@ const ProjectCard = ({ project, isExpanded, onToggle }) => {
 const ProjectsPage = () => {
   const [expandedId, setExpandedId] = useState(null);
 
+  const projects = [
+    {
+      id: 1,
+      title: "Payment Machine Redesign",
+      description: "A comprehensive redesign of the payment interface for washing machines",
+      image: "/api/placeholder/800/600",
+      gallery: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300"
+      ],
+      longDescription: "Redesigned the payment interface for washing machines to improve user experience and accessibility. The project focused on creating an intuitive, user-friendly interface that accommodates users of all ages and technical backgrounds.",
+      tech: ["UI/UX", "Prototyping", "User Research", "Interaction Design"],
+      features: [
+        "Intuitive payment flow",
+        "Accessibility features",
+        "Multi-language support",
+        "Digital receipt system"
+      ],
+      github: "https://github.com/KristineHorluck/payment-machine",
+      liveDemo: "https://demo-payment.com"
+    },
+    {
+      id: 2,
+      title: "Interactive Dashboard",
+      description: "Data visualization dashboard for business analytics",
+      image: "/api/placeholder/800/600",
+      gallery: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300"
+      ],
+      longDescription: "Developed a responsive dashboard that transforms complex data into intuitive visualizations. Features include customizable widgets, real-time updates, and export capabilities.",
+      tech: ["React", "TypeScript", "D3.js", "Tailwind CSS"],
+      features: [
+        "Customizable dashboard layouts",
+        "Interactive data visualizations",
+        "Real-time data updates",
+        "Export to PDF/CSV"
+      ],
+      github: "https://github.com/KristineHorluck/dashboard",
+      liveDemo: "https://demo-dashboard.com"
+    },
+    {
+      id: 3,
+      title: "Smart Home IoT Interface",
+      description: "User interface for controlling smart home devices",
+      image: "/api/placeholder/800/600",
+      gallery: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/300"
+      ],
+      longDescription: "Created an intuitive interface for managing smart home devices, featuring real-time device status updates, automation rules, and energy consumption tracking.",
+      tech: ["React", "WebSocket", "Node.js", "MongoDB"],
+      features: [
+        "Device status monitoring",
+        "Automation rule creator",
+        "Energy usage analytics",
+        "Mobile-responsive design"
+      ],
+      github: "https://github.com/KristineHorluck/smart-home",
+      liveDemo: "https://demo-smarthome.com"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-[#284b63] mb-8">My Projects</h1>
         <div className="space-y-8">
-          {projects && projects.map((project) => (
+          {projects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
