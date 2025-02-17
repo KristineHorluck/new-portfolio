@@ -223,6 +223,10 @@ const ProjectsPage = () => {
     <div className="min-h-screen py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-[#284b63] mb-8">My Projects</h1>
+        <p className="text-[#284b63]/80 mb-8 italic">
+          These projects are only group based projects, since my personal projects still are in the early development phase. 
+          I would like to thank Amalie, Ayan, Casper, Daniel, Diem, Frida, Ida, Jennie, Johan, Josefine, Katja, Kristine A and Luna for participating in these projects.
+        </p>
         <div className="space-y-8">
           {projects.map((project) => (
             <ProjectCard

@@ -89,43 +89,49 @@ const ContactPage = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {/* Contact Information Cards */}
-          {[
-            {
-              icon: <Mail className="w-6 h-6" />,
-              title: 'Email',
-              content: 'kristine.horluck@outlook.com',
-              link: 'mailto:kristine.horluck@outlook.com'
-            },
-            {
-              icon: <Phone className="w-6 h-6" />,
-              title: 'Phone Number',
-              content: '+45 22 92 23 35'
-            },
-            {
-              icon: <MapPin className="w-6 h-6" />,
-              title: 'Location',
-              content: 'Aalborg, Denmark'
-            }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-[#3c6e71]/20"
+  {[
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: 'Email',
+      content: 'kristine.horluck@outlook.com',
+      link: 'mailto:kristine.horluck@outlook.com'
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: 'Phone Number',
+      content: '+45 22 92 23 35'
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: 'Location',
+      content: 'Aalborg, Denmark'
+    }
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-[#3c6e71]/20 min-h-[160px] w-full"
+    >
+      <div className="flex gap-3">
+        <div className="text-[#3c6e71] shrink-0 pt-1">{item.icon}</div>
+        <div className="min-w-0 flex-1 -m-1"> {/* This ensures proper text wrapping */}
+          <h3 className="font-semibold text-lg text-[#284b63] mb-2">{item.title}</h3>
+          {item.link ? (
+            <a 
+              href={item.link} 
+              className="text-[#284b63] hover:text-[#3c6e71] transition-colors inline-block w-full overflow-hidden text-ellipsis"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="text-[#3c6e71]">{item.icon}</div>
-                <h3 className="font-semibold text-lg text-[#284b63]">{item.title}</h3>
-              </div>
-              {item.link ? (
-                <a href={item.link} className="text-[#284b63] hover:text-[#3c6e71] transition-colors">
-                  {item.content}
-                </a>
-              ) : (
-                <p className="text-[#284b63]">{item.content}</p>
-              )}
-            </div>
-          ))}
+              {item.content}
+            </a>
+          ) : (
+            <p className="text-[#284b63] overflow-hidden text-ellipsis">
+              {item.content}
+            </p>
+          )}
         </div>
+      </div>
+    </div>
+  ))}
+</div>
 
         {/* Contact Form Section */}
         <div className="max-w-2xl mx-auto">

@@ -92,13 +92,13 @@ const LandingPage = () => {
 
               <p className="text-xl text-[#284b63] mb-8 max-w-2xl">
                 Based in Aalborg, Denmark. I study interaction design at Aalborg University, 
-                with both physical and interactive products.
+                with both physical and interactive products, psst. click for a picture 😄.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">
                 <a 
                   href="/projects" 
-                  className="group inline-flex items-center px-6 py-3 text-lg font-medium text-white bg-[#3c6e71] 
+                  className="group inline-flex items-center px-6 py-3 text-lg font-medium text-white hover:text-white bg-[#3c6e71] 
                              rounded-lg hover:bg-[#284b63] transition-all duration-300 transform hover:-translate-y-1"
                   onClick={(e) => e.stopPropagation()}
                 >

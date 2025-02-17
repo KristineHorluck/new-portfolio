@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Star, Coffee, Plane ,Brain, Utensils, ChevronLeft, ChevronRight, GraduationCap, Trophy, ChefHat, Pencil, School, Map, Figma, Contact, Trash} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Rocket, Star, Coffee, Plane, Brain, Utensils, ChevronLeft, ChevronRight, GraduationCap, Trophy, ChefHat, Pencil, School, Map, Figma, Contact, Trash} from 'lucide-react';
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -92,9 +93,9 @@ const AboutPage = () => {
         {/* Fun Facts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-4">
           {[
-            { title: 'Passion', content: 'Coaching at my local football club', icon: <Trophy /> },
-            { title: 'Currently Learning', content: 'Advanced React Patterns', icon: <Brain /> },
-            { title: 'Fun Fact', content: 'I Love cooking, and is currently experimenting the north african kitchen', icon: <Utensils /> }
+            { title: 'Passion', content: 'I am a football coach at my local football club', icon: <Trophy /> },
+            { title: 'Currently Learning', content: 'I am currently learning advanced React patterns, and the product of this has been this portfolio', icon: <Brain /> },
+            { title: 'Fun Fact', content: 'I love cooking, and is currently experimenting the north african kitchen', icon: <Utensils /> }
           ].map((fact, index) => (
             <div 
               key={index}
@@ -163,9 +164,12 @@ const AboutPage = () => {
           <p className="text-lg text-[#284b63] mb-8">
             Drop me a message and let's start a conversation about your next exciting project.
           </p>
-          <button className="bg-[#3c6e71] text-white px-8 py-3 rounded-full hover:bg-[#284b63] transform hover:-translate-y-1 transition-all duration-300">
+          <Link 
+            to="/contact" 
+            className="inline-block bg-[#3c6e71] text-white hover:text-white px-8 py-3 rounded-full hover:bg-[#284b63] transform hover:-translate-y-1 transition-all duration-300"
+          >
             Say Hello! 👋
-          </button>
+          </Link>
         </div>
       </div>
     </div>

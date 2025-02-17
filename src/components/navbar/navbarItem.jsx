@@ -15,23 +15,38 @@ const NavbarItem = ({ label, path, icon, isActive, isLogo }) => {
     const isScrollSection = path.startsWith('#');
     
     if (isLogo) {
+        const words = label.split(' ');
         return (
             <RouterLink
                 to={path}
                 className="group relative text-xl md:text-2xl font-medium text-[#284b63] transition-colors duration-300"
             >
                 <span className="relative inline-block transition-transform duration-300 group-hover:-translate-y-1">
-                    {label.split('').map((char, index) => (
-                        <span
-                            key={index}
-                            className="inline-block transition-transform duration-300 hover:text-[#3c6e71]"
-                            style={{
-                                transitionDelay: `${index * 30}ms`,
-                                transform: 'translateY(0)',
-                            }}
-                        >
-                            {char}
-                        </span>
+                    {words.map((word, wordIndex) => (
+                        <React.Fragment key={wordIndex}>
+                            {wordIndex > 0 && (
+                                <span 
+                                    className="inline-block transition-transform duration-300 hover:text-[#3c6e71]"
+                                    style={{
+                                        transitionDelay: `${wordIndex * words[wordIndex-1].length * 30}ms`,
+                                    }}
+                                >
+                                    {" "}
+                                </span>
+                            )}
+                            {word.split('').map((char, charIndex) => (
+                                <span
+                                    key={`${wordIndex}-${charIndex}`}
+                                    className="inline-block transition-transform duration-300 hover:text-[#3c6e71]"
+                                    style={{
+                                        transitionDelay: `${(wordIndex * word.length + charIndex) * 30}ms`,
+                                        transform: 'translateY(0)',
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </React.Fragment>
                     ))}
                 </span>
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#3c6e71] to-[#284b63] transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
