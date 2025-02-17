@@ -12,33 +12,46 @@ const AboutPage = () => {
     {
       year: '2020',
       title: 'Started My Journey',
-      description: 'Discovered my passion for creating amazing things!',
+      description: 'Started at Aalborg Tekniske Gymnasium, with a Field of Study in IT',
       icon: <Rocket className="text-[#3c6e71]" />
     },
     {
       year: '2021',
-      title: 'First Big Project',
-      description: 'Built something awesome that made people smile',
+      title: 'Started understanding the basics of Objects Oriented Programming',
+      description: 'Built something for the first time I was proud of',
       icon: <Star className="text-[#284b63]" />
     },
     {
-      year: '2022',
-      title: 'Level Up',
-      description: 'Learned new skills and met incredible people',
+      year: '2023',
+      title: 'Finished my high school education',
+      description: 'Spent the summer volunteering and solo travelling in the Netherlands',
       icon: <Sparkles className="text-[#3c6e71]" />
     },
     {
       year: '2023',
-      title: 'New Adventures',
-      description: 'Embarked on exciting new challenges',
+      title: 'New Adventures at Aalborg University, studying Interaction Design',
+      description: 'Embarked on some exciting new challenges, and found my way to frontend development',
       icon: <Heart className="text-[#284b63]" />
     },
     {
-      year: '2024',
-      title: 'Current Chapter',
-      description: 'Writing the next exciting part of my story!',
+      year: 'Fall 2023',
+      title: 'Finished working on my first project, with some amazing people',
+      description: 'Made my first UX focused project on a Redesign of a Laundry Payment Machine Low-fidelity mockups',
       icon: <Coffee className="text-[#3c6e71]" />
-    }
+    },
+    {
+      year: 'Fall 2023',
+      title: 'Made my first project with a focus on Usability Testing',
+      description: 'Finished the project Redesign of Travellink Holiday Rentals with an A, Focus on Usability Testing and High-fidelity mockups in Figma',
+      icon: <Coffee className="text-[#3c6e71]" />
+    },
+    {
+      year: '2024',
+      title: 'Made my first project with a focus on Usability Testing',
+      description: 'Finished the project Redesign of Travellink Holiday Rentals with an A, Focus on Usability Testing and High-fidelity mockups in Figma',
+      icon: <Coffee className="text-[#3c6e71]" />
+    },
+    
   ];
 
   const handleScroll = (direction) => {

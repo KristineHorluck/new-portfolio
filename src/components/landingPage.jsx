@@ -30,8 +30,9 @@ const LandingPage = () => {
     { name: 'TypeScript', description: 'Type-Safe JavaScript', icon: '📝' },
     { name: 'Tailwind CSS', description: 'Utility-First CSS', icon: '🎨' },
     { name: 'Node.js', description: 'Backend Development', icon: '🚀' },
-    { name: 'Next.js', description: 'React Framework', icon: '▲' },
-    { name: 'UI/UX Design', description: 'User Experience', icon: '✨' },
+    { name: 'Figma', description: 'Creation of Mockups', icon: '✏️' },
+    { name: 'UI/UX Design', description: 'User Experience', icon: '👥' },
+    { name: 'Angular', description: 'Frontend Framework', icon: '🅰️' },
   ];
 
   return (
