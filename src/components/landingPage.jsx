@@ -92,7 +92,7 @@ const LandingPage = () => {
 
               <p className="text-xl text-[#284b63] mb-8 max-w-2xl">
                 Based in Aalborg, Denmark. I study interaction design at Aalborg University, 
-                with both physical and interactive products, psst. click for a picture 😄.
+                with both physical and interactive products.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-12">
@@ -213,15 +213,15 @@ const LandingPage = () => {
             {[
               {
                 title: 'Web application design',
-                description: 'This project tackles loneliness among young adults in Denmark by developing a web app for self-organized events based on shared interests. A questionnaire and interview provided insights into loneliness, guiding the iterative design of low- and high-fidelity prototypes. The final prototype, refined through testing, shaped the web app built with Angular and a MySQL database for user logins. The platform enables users to create, discover, and join events, fostering community and connection.',
+                description: 'This project aim to tackle loneliness among young adults in Denmark by developing a web app for self-organized events based on shared interests. A questionnaire and interview provided insights into loneliness, guiding the iterative design of low- and high-fidelity prototypes. The final prototype, refined through testing, shaped the web app built with Angular and a MySQL database for user logins. The platform enables users to create, discover, and join events, fostering community and connection.',
                 tech: ["JavaScript", "Figma", "User Research", "Prototyping", "Frontend Development", "Angular"],
-                image: '/src/assets/Greetly/Homepage.png'
+                image: '../Homepage.png'
               },
               {
                 title: 'Physical Product Design',
                 description: 'The project aims to develop a smart home product that helps apartment-living students sort waste properly. Through user involvement, key challenges will be identified, and co-design will shape the design concept. Methods like interviews, questionnaires, and workshops will foster creativity. Iterative design ensures participants contribute to problem identification, concept generation, and prototype development.',
                 tech: ["User Research", "Prototyping", "Physical Product Design", "Interaction Design", "Co-creation", "User centered design"],
-                image: '/src/assets/SmartHomeWaste/ResultMiniProtoTest.png'
+                image: '../ResultMiniProtoTest.png'
               }
             ].map((project, index) => (
               <div 

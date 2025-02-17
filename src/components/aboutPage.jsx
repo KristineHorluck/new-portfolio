@@ -58,7 +58,6 @@ const AboutPage = () => {
       description: 'Made my first physical project with a focus on developing a smart home product that helps apartment-living students sort waste properly',
       icon: <Trash className="text-[#3c6e71]" />
     },
-    
   ];
 
   const handleScroll = (direction) => {
@@ -76,17 +75,28 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-[#3c6e71]">
-            Hello, I'm Kristine Hørlück  
-          </h1>
-          <p className="text-xl text-[#284b63] mb-4">
-            Student • Football Coach • Hobby Chef
-          </p>
-          <div className="flex justify-center gap-4">
-            <GraduationCap className="text-[#3c6e71] animate-bounce" />
-            <Trophy className="text-[#284b63] animate-bounce delay-100" />
-            <ChefHat className="text-[#3c6e71] animate-bounce delay-200" />
+        {/* Header Section with Image */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 px-4 lg:px-8 mb-16">
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl font-bold mb-4 text-[#3c6e71]">
+              Hello, I'm Kristine Hørlück  
+            </h1>
+            <p className="text-xl text-[#284b63] mb-4">
+              Student • Football Coach • Hobby Chef
+            </p>
+            <div className="flex justify-center md:justify-start gap-4">
+              <GraduationCap className="text-[#3c6e71] animate-bounce" />
+              <Trophy className="text-[#284b63] animate-bounce delay-100" />
+              <ChefHat className="text-[#3c6e71] animate-bounce delay-200" />
+            </div>
+          </div>
+          
+          <div className="w-full md:w-1/2 max-w-md">
+            <img 
+              src="/Ged.jpg" 
+              alt="Kristine Hørlück" 
+              className="rounded-xl shadow-lg w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </div>
 

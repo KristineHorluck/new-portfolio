@@ -110,12 +110,12 @@ const ProjectsPage = () => {
       id: 1,
       title: "Web application design",
       description: "Design and development of a social web application for organizing local activities",
-      image: "/src/assets/Greetly/Homepage.png",
+      image: "../Homepage.png",
       gallery: [
-        "/src/assets/Greetly/EmpathyMap.png",
-        "/src/assets/Greetly/WireFraming.png",
-        "/src/assets/Greetly/DesignOption1.png",
-        "/src/assets/Greetly/Login.png"
+        "../EmpathyMap.png",
+        "../WireFraming.png",
+        "../DesignOption1.png",
+        "../Login.png"
       ],
       longDescription: "Developed a comprehensive web application called Greetly, designed to help users organize and participate in local activities. OBS. the database is local, and therefore not available for public use.",
       tech: ["JavaScript", "Figma", "User Research", "Prototyping", "Frontend Development", "Angular"],
@@ -133,12 +133,12 @@ const ProjectsPage = () => {
       id: 2,
       title: "Physical product design",
       description: "Design and development of a smart home waste sorting product for student apartments",
-      image: "/src/assets/SmartHomeWaste/ResultMiniProtoTest.png",
+      image: "../ResultMiniProtoTest.png",
       gallery: [
-        "/src/assets/SmartHomeWaste/miniProto.png",
-        "/src/assets/SmartHomeWaste/miniProtoTest.png",
-        "/src/assets/SmartHomeWaste/physicalProto.png",
-        "/src/assets/SmartHomeWaste/insidePhysicalProto.png"
+        "../miniProto.png",
+        "../miniProtoTest.png",
+        "../physicalProto.png",
+        "../insidePhysicalProto.png"
       ],
       longDescription: "Designed and developed a smart home product that helps apartment-living students sort waste properly.",
       tech: ["User Research", "Prototyping", "Physical Product Design", "Interaction Design", "Co-creation", "User centered design"],
@@ -154,12 +154,12 @@ const ProjectsPage = () => {
       id: 3,
       title: "Redesign of Travellink Holiday Rentals",
       description: "Made by analysing the potential redesign of holiday rentals on Travellink.dk",
-      image: "/src/assets/Travellink/Redesign2.png",
+      image: "../Redesign2.png",
       gallery: [
-        "/src/assets/Travellink/GrafUsabilityProblemsFounds.png",
-        "/src/assets/Travellink/FIltersOnVacationsTravellinkWebsite.png",
-        "/src/assets/Travellink/Redesign2.png",
-        "/src/assets/Travellink/RedesignEvaluation.png"
+        "../GrafUsabilityProblemsFounds.png",
+        "../FIltersOnVacationsTravellinkWebsite.png",
+        "../Redesign2.png",
+        "../RedesignEvaluation.png"
       ],
       longDescription: "This project were made by analysing the potential redesign of holiday rentals on Travellink.dk, focusing on the application of Nielsen Norman's 10 Usability Heuristics.",
       tech: ["Usability Testing", "UI/UX", "Heuristic Evaluation", "User Research"],
@@ -174,19 +174,18 @@ const ProjectsPage = () => {
       id: 4,
       title: "Laundry Payment Machine Redesign",
       description: "First unversity project, consisting redesign of the payment interface for payment machine",
-      image: "/src/assets/Laundry/ATMOversigt.png",
+      image: "../ATMOversigt.png",
       gallery: [
-        "/src/assets/Laundry/Steps.png",
-        "/src/assets/Laundry/GrupperingAfKnapper.png",
-        "/src/assets/Laundry/Sketch1.png",
-        "/src/assets/Laundry/Steps.png"
+        "../Steps.png",
+        "../GrupperingAfKnapper.png",
+        "../Sketch1.png",
+        "../OptimisedDesign.png"
       ],
       longDescription: "Redesigned the payment interface to improve user experience and accessibility. The project focused on creating an intuitive, user-friendly interface that accommodates users of all ages and technical backgrounds.",
       tech: ["UI/UX", "Sketching", "Interaction Design"],
       features: [
         "Intuitive payment flow",
         "Accessibility features",
-        "Multi-language support",
         "Minimising Cognitive load"
 
       ],
