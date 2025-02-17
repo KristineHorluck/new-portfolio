@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp, ExternalLink, Github } from 'lucide-react';
 
 const ProjectCard = ({ project, isExpanded, onToggle }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-[#3c6e71]/10">
+    <div className="rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-[#3c6e71]/10">
       <div className="cursor-pointer">
         {/* Image Section */}
         <div className="relative h-64 w-full overflow-hidden">
@@ -110,14 +110,14 @@ const ProjectsPage = () => {
       id: 1,
       title: "Web application design",
       description: "Design and development of a social web application for organizing local activities",
-      image: "/src/assets/Greetly/Homepage-removebg-preview.png",
+      image: "/src/assets/Greetly/Homepage.png",
       gallery: [
         "/src/assets/Greetly/EmpathyMap.png",
         "/src/assets/Greetly/WireFraming.png",
         "/src/assets/Greetly/DesignOption1.png",
-        "/src/assets/Greetly/Homepage-removebg-preview.png"
+        "/src/assets/Greetly/Login.png"
       ],
-      longDescription: "Developed a comprehensive web application called Greetly, designed to help users organize and participate in local activities.",
+      longDescription: "Developed a comprehensive web application called Greetly, designed to help users organize and participate in local activities. OBS. the database is local, and therefore not available for public use.",
       tech: ["JavaScript", "Figma", "User Research", "Prototyping", "Frontend Development", "Angular"],
       features: [
         "User profile creation and management",
@@ -169,12 +169,11 @@ const ProjectsPage = () => {
         "Minimising Cognitive load"
 
       ],
-      github: "https://github.com/KristineHorluck/Greetly",
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white py-12">
+    <div className="min-h-screen py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-[#284b63] mb-8">My Projects</h1>
         <div className="space-y-8">

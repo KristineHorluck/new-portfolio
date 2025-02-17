@@ -33,6 +33,11 @@ const LandingPage = () => {
     { name: 'Figma', description: 'Creation of Mockups', icon: '✏️' },
     { name: 'UI/UX Design', description: 'User Experience', icon: '👥' },
     { name: 'Angular', description: 'Frontend Framework', icon: '🅰️' },
+    { name: 'MySQL', description: 'Database Management', icon: '🗄️' },
+    { name: 'C#', description: 'Backend Development', icon: '🔵' },
+    { name: 'Java', description: 'Backend Development', icon: '☕' },
+    { name: 'JavaScript', description: 'Frontend Development', icon: '🟨' },
+    { name: 'Visual Studio Code', description: 'Code Editor', icon: '🧰' },
   ];
 
   return (
@@ -203,20 +208,14 @@ const LandingPage = () => {
       {/* Projects Preview Section */}
       <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-[#284b63] mb-8">Featured Projects</h2>
+          <h2 className="text-2xl font-semibold text-[#284b63] mb-8">Featured Project</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: 'Project 1',
-                description: 'Description of project 1',
-                tech: ['React', 'TypeScript', 'Tailwind'],
-                image: '/api/placeholder/400/300'
-              },
-              {
-                title: 'Project 2',
-                description: 'Description of project 2',
-                tech: ['Next.js', 'Node.js', 'MySQL'],
-                image: '/api/placeholder/400/300'
+                title: 'Web application design',
+                description: 'This project tackles loneliness among young adults in Denmark by developing a web app for self-organized events based on shared interests. A questionnaire and interview provided insights into loneliness, guiding the iterative design of low- and high-fidelity prototypes. The final prototype, refined through testing, shaped the web app built with Angular and a MySQL database for user logins. The platform enables users to create, discover, and join events, fostering community and connection.',
+                tech: ["JavaScript", "Figma", "User Research", "Prototyping", "Frontend Development", "Angular"],
+                image: '/src/assets/Greetly/Homepage.png'
               }
             ].map((project, index) => (
               <div 
@@ -238,13 +237,13 @@ const LandingPage = () => {
                   <h3 className="text-xl font-medium text-[#284b63] mb-2">{project.title}</h3>
                   <p className="text-[#284b63]/80 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span 
-                        key={i}
-                        className="px-2 py-1 bg-[#284B63]-50 text-blue-600 text-sm rounded-full"
+                  {project.tech.map((tech, i) => (
+                    <span 
+                     key={i}
+                     className="px-3 py-1 bg-[#3c6e71]/10 text-[#3c6e71] text-sm rounded-full"
                       >
-                        {tech}
-                      </span>
+                      {tech}
+                    </span>
                     ))}
                   </div>
                 </div>

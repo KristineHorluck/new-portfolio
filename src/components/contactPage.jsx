@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Clock, Send, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Clock, Send, AlertCircle, Loader2, Phone } from 'lucide-react';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -94,8 +94,13 @@ const ContactPage = () => {
             {
               icon: <Mail className="w-6 h-6" />,
               title: 'Email',
-              content: 'kristine.horluck@example.com',
-              link: 'mailto:kristine.horluck@example.com'
+              content: 'kristine.horluck@outlook.com',
+              link: 'mailto:kristine.horluck@outlook.com'
+            },
+            {
+              icon: <Phone className="w-6 h-6" />,
+              title: 'Phone Number',
+              content: '+45 22 92 23 35'
             },
             {
               icon: <MapPin className="w-6 h-6" />,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Rocket, Heart, Star, Coffee, Music, Camera, Palette,Brain, Utensils, ChevronLeft, ChevronRight} from 'lucide-react';
+import { Rocket, Star, Coffee, Plane ,Brain, Utensils, ChevronLeft, ChevronRight, GraduationCap, Trophy, ChefHat, Pencil, School, Map, Figma, Contact, Trash} from 'lucide-react';
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,46 +10,52 @@ const AboutPage = () => {
 
   const timelineEvents = [
     {
-      year: '2020',
+      year: 'Summer 2020',
       title: 'Started My Journey',
       description: 'Started at Aalborg Tekniske Gymnasium, with a Field of Study in IT',
       icon: <Rocket className="text-[#3c6e71]" />
     },
     {
-      year: '2021',
+      year: 'Spring 2021',
       title: 'Started understanding the basics of Objects Oriented Programming',
       description: 'Built something for the first time I was proud of',
       icon: <Star className="text-[#284b63]" />
     },
     {
-      year: '2023',
+      year: 'Summer 2023',
       title: 'Finished my high school education',
       description: 'Spent the summer volunteering and solo travelling in the Netherlands',
-      icon: <Sparkles className="text-[#3c6e71]" />
+      icon: <Map className="text-[#3c6e71]" />
     },
     {
-      year: '2023',
+      year: 'Summer 2023',
       title: 'New Adventures at Aalborg University, studying Interaction Design',
       description: 'Embarked on some exciting new challenges, and found my way to frontend development',
-      icon: <Heart className="text-[#284b63]" />
+      icon: <School className="text-[#284b63]" />
     },
     {
       year: 'Fall 2023',
       title: 'Finished working on my first project, with some amazing people',
       description: 'Made my first UX focused project on a Redesign of a Laundry Payment Machine Low-fidelity mockups',
-      icon: <Coffee className="text-[#3c6e71]" />
+      icon: <Pencil className="text-[#3c6e71]" />
     },
     {
       year: 'Fall 2023',
       title: 'Made my first project with a focus on Usability Testing',
       description: 'Finished the project Redesign of Travellink Holiday Rentals with an A, Focus on Usability Testing and High-fidelity mockups in Figma',
-      icon: <Coffee className="text-[#3c6e71]" />
+      icon: <Figma className="text-[#3c6e71]" />
     },
     {
-      year: '2024',
-      title: 'Made my first project with a focus on Usability Testing',
-      description: 'Finished the project Redesign of Travellink Holiday Rentals with an A, Focus on Usability Testing and High-fidelity mockups in Figma',
-      icon: <Coffee className="text-[#3c6e71]" />
+      year: 'Spring 2024',
+      title: 'Made my first project with a focus on implementation of a Database into a webapplication',
+      description: 'Finished the design and development of a social web application with an A, The focus were on the implementation of a Database into a webapplication made with Angular',
+      icon: <Contact className="text-[#3c6e71]" />
+    },
+    {
+      year: 'Fall 2024',
+      title: 'Smart Home waste sorting in student apartments',
+      description: 'Made my first physical project with a focus on developing a smart home product that helps apartment-living students sort waste properly',
+      icon: <Trash className="text-[#3c6e71]" />
     },
     
   ];
@@ -74,25 +80,25 @@ const AboutPage = () => {
             Hello, I'm Kristine Hørlück  
           </h1>
           <p className="text-xl text-[#284b63] mb-4">
-            Creative Soul • Frontend Developer • Design Enthusiast
+            Student • Football Coach • Hobby Chef
           </p>
           <div className="flex justify-center gap-4">
-            <Music className="text-[#3c6e71] animate-bounce" />
-            <Camera className="text-[#284b63] animate-bounce delay-100" />
-            <Palette className="text-[#3c6e71] animate-bounce delay-200" />
+            <GraduationCap className="text-[#3c6e71] animate-bounce" />
+            <Trophy className="text-[#284b63] animate-bounce delay-100" />
+            <ChefHat className="text-[#3c6e71] animate-bounce delay-200" />
           </div>
         </div>
 
         {/* Fun Facts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 px-4">
           {[
-            { title: 'Passion', content: 'Creating Beautiful UI', icon: <Palette /> },
+            { title: 'Passion', content: 'Coaching at my local football club', icon: <Trophy /> },
             { title: 'Currently Learning', content: 'Advanced React Patterns', icon: <Brain /> },
-            { title: 'Fun Fact', content: 'Love Cooking', icon: <Utensils /> }
+            { title: 'Fun Fact', content: 'I Love cooking, and is currently experimenting the north african kitchen', icon: <Utensils /> }
           ].map((fact, index) => (
             <div 
               key={index}
-              className="bg-white backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-[#3c6e71]/20"
+              className="backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-[#3c6e71]/20"
             >
               <div className="flex items-center gap-3 mb-3 text-[#3c6e71]">
                 {fact.icon}
