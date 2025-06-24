@@ -200,7 +200,7 @@ const ProjectsPage = () => {
           These projects are only group based projects, since my personal projects still are in the early development phase. 
           I would like to thank Amalie, Ayan, Casper, Daniel, Diem, Frida, Ida, Jennie, Johan, Josefine, Katja, Kristine A and Luna for participating in these projects.
         </p>
-        <div className="space-y-8">
+        <div className="space-y-8 ">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}
