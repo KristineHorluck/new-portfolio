@@ -189,15 +189,18 @@ const ProjectsPage = () => {
         "Minimising Cognitive load"
 
       ],
-    }
+    },
+    
     {
      Id: 5,
      title: "Escape Room in a Submarine using Arduino",
       description: "Created an escape room experience set in a submarine using Arduino for interactive elements",
-      image: "../",
+      image: "../Escape room - 2.png",
       gallery: [
-        "../",
-        "../",
+        "../Ubåd FLOWCHART(1).jpg",
+        "../Blow out the cigarette puzzle in the suitecase.png",
+        "../BlowOutTheCigarette Overview.png",
+        "../Box in suitcase.jpg"
       ],
       longDescription: "Designed and built an immersive escape room experience set in a submarine, utilizing Arduino to create interactive puzzles and challenges that engage participants in problem-solving and teamwork.",
     }
