@@ -130,6 +130,13 @@
   }
 }
 
+.hide-navbar nav {
+  transform: translateY(-100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
 @keyframes float {
   0% {
       transform: translateY(0) scale(1);

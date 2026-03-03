@@ -16,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed w-full top-0 z-50 h-16">
+        <nav className="fixed w-full top-0 z-50 h-16 transition-all duration-400">
             {/* Glowing background effect with reduced opacity */}
             <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
             
