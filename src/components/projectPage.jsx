@@ -114,6 +114,12 @@ export default function ProjectsPage() {
   const [showModal, setShowModal] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Throttle ref: tracks when the last navigation happened
+  const lastNavigatedAt = useRef(0);
+  // Accumulated delta for trackpad resistance
+  const accumulatedDelta = useRef(0);
+
   const touchStartY = useRef(null);
   const touchStartX = useRef(null);
 
@@ -134,17 +140,36 @@ export default function ProjectsPage() {
       if (next < 0 || next >= projects.length) return;
       setIsTransitioning(true);
       setCurrent(next);
-      setTimeout(() => setIsTransitioning(false), 600);
+      // Reset accumulated delta after a successful navigation
+      accumulatedDelta.current = 0;
+      setTimeout(() => setIsTransitioning(false), 700);
     },
     [current, isTransitioning]
   );
 
-  // Scroll wheel
+  // Scroll wheel — throttled + accumulated delta threshold to prevent runaway firing
   useEffect(() => {
+    const THROTTLE_MS = 800;       // minimum ms between navigations
+    const DELTA_THRESHOLD = 50;    // how much scroll accumulation triggers a step
+
     const onWheel = (e) => {
       e.preventDefault();
-      navigate(e.deltaY > 0 ? 1 : -1);
+
+      const now = Date.now();
+
+      // Ignore if we navigated too recently
+      if (now - lastNavigatedAt.current < THROTTLE_MS) return;
+
+      accumulatedDelta.current += e.deltaY;
+
+      if (Math.abs(accumulatedDelta.current) >= DELTA_THRESHOLD) {
+        const dir = accumulatedDelta.current > 0 ? 1 : -1;
+        lastNavigatedAt.current = now;
+        accumulatedDelta.current = 0;
+        navigate(dir);
+      }
     };
+
     window.addEventListener('wheel', onWheel, { passive: false });
     return () => window.removeEventListener('wheel', onWheel);
   }, [navigate]);
@@ -160,7 +185,7 @@ export default function ProjectsPage() {
     return () => window.removeEventListener('keydown', onKey);
   }, [navigate]);
 
-  // Touch swipe
+  // Touch swipe — requires at least 60px swipe to trigger
   const onTouchStart = (e) => {
     touchStartY.current = e.touches[0].clientY;
     touchStartX.current = e.touches[0].clientX;
@@ -169,8 +194,12 @@ export default function ProjectsPage() {
     if (touchStartY.current === null) return;
     const dy = touchStartY.current - e.changedTouches[0].clientY;
     const dx = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 40) navigate(dy > 0 ? 1 : -1);
-    else if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) navigate(dx > 0 ? 1 : -1);
+    const SWIPE_THRESHOLD = 60;
+    if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > SWIPE_THRESHOLD) {
+      navigate(dy > 0 ? 1 : -1);
+    } else if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      navigate(dx > 0 ? 1 : -1);
+    }
     touchStartY.current = null;
     touchStartX.current = null;
   };
@@ -312,7 +341,9 @@ export default function ProjectsPage() {
               if (!isTransitioning) {
                 setIsTransitioning(true);
                 setCurrent(i);
-                setTimeout(() => setIsTransitioning(false), 600);
+                accumulatedDelta.current = 0;
+                lastNavigatedAt.current = Date.now();
+                setTimeout(() => setIsTransitioning(false), 700);
               }
             }}
             className="flex items-center justify-center"

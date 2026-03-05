@@ -142,7 +142,7 @@
       transform: translateY(0) scale(1);
   }
   50% {
-      transform: translateY(-15px) scale(1.03); /* Reduced movement from -20px to -15px */
+      transform: translateY(-15px) scale(1.03);
   }
   100% {
       transform: translateY(0) scale(1);
